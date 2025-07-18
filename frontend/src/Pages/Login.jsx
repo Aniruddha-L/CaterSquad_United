@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../../Assets/css/login.css';
+import Cookies from "js-cookie"
 
 const Login = ({setUser}) => {
   document.title = 'C4U - Login';
@@ -30,6 +31,7 @@ const Login = ({setUser}) => {
         setMsg("Success")
         navigate('/dashboard')
         setUser(username)
+        new Cookies.set('user', username)
         return
       }
       else{
@@ -68,7 +70,8 @@ const Login = ({setUser}) => {
 
       <div>
         <button type="submit" onClick={handleSubmit}>Submit</button>
-      </div>
+      </div><br />
+      <button type="submit" onClick={() => navigate('/User/Register')}>Register</button>
     </div>
   );
 };

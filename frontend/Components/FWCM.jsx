@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../Assets/css/fwcm.css';
 
 const colors = ['plain', 'yellow', 'red'];
@@ -20,14 +20,36 @@ const ColorGrid = () => {
     Array(buttonData.length).fill(0)
   );
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setColorIndices(
-        buttonData.map(() => Math.floor(Math.random() * colors.length))
-      );
-    }, 1000); // Change every 1 second
+  const timeoutRef = useRef(null);
 
-    return () => clearInterval(interval);
+  const updateColors = () => {
+    const newColorIndices = buttonData.map(() =>
+      Math.floor(Math.random() * colors.length)
+    );
+
+    setColorIndices(newColorIndices);
+
+    let delay = 5000; // Default delay
+
+    if (newColorIndices.includes(colors.indexOf('red'))) {
+      // window.alert('In 4m proximity');
+      delay = 5000;
+    } else if (newColorIndices.includes(colors.indexOf('yellow'))) {
+      window.alert('In 6M proximity');
+      delay = 5000;
+    }
+
+    timeoutRef.current = setTimeout(updateColors, delay);
+  };
+
+  useEffect(() => {
+    updateColors(); // Initial trigger
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, []);
 
   // Group buttons into rows

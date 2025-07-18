@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../../Assets/css/Register.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Cookies from "js-cookie"
 
 function Register({ setUser }) {
   document.title = 'C4U - Registration';
@@ -44,6 +45,7 @@ function Register({ setUser }) {
       if (resp.status === 200) {
         setMsg('Success');
         setUser(user);
+        new Cookies.set('user', user)
         navigate('/dashboard');
       } else {
         setMsg(resp.data.msg);

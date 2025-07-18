@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import '../../Assets/css/home.css'
 import {useNavigate} from "react-router-dom"
+import Cookies from 'js-cookie'
 
 const Home = () => {
   let navigate = useNavigate()
@@ -18,13 +19,16 @@ const Home = () => {
   const regBtn = () =>{
     navigate('/User/Register')
   }
-
+  const signout = () =>{
+      Cookies.remove('user')
+  }
   return (
     <div className="home-container">
       {/* Left Partition */}
       <div className="home-partition partition-left">
         <button onClick={loginBtn} className="auth-button">Login</button>
         <button onClick={regBtn} className="auth-button">Sign Up</button>
+        <button onClick={signout} className='auth-button'>Signout</button>
       </div>
 
       {/* Right Partition */}
