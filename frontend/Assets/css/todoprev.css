@@ -1,0 +1,16 @@
+/* Caterpillar Yellow: #FFCE00 */
+
+.container-todoprev li {
+  background-color: #FFCE00;   /* Caterpillar Yellow */
+  color: rgb(0, 0, 0);                /* White text */
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border-left: 4px solid white;  /* Optional: left border for accent */
+  font-weight: bold;
+}
+
+/* Strong tags should also stay white for readability */
+.container-todoprev strong {
+  color: rgb(0, 0, 0);
+}

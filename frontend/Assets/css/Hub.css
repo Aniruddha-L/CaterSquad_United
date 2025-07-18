@@ -1,0 +1,44 @@
+/* Hub.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container-hub {
+  background-color: black;
+  color: white;
+  height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+.container-hub .container {
+  display: flex;               /* ✅ Use flexbox to center vertically */
+  flex-direction: column;     /* Stack links vertically */
+  align-items: center;        /* ✅ Center items horizontally */
+  gap: 12px;                  /* Nice spacing between links */
+  width: 100%;
+}
+
+.container-hub .container a, button {
+  font-size: 16px;
+  color: yellow;
+  text-decoration: none;
+  border: 1px solid yellow;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  width: 33.33%;
+  min-width: 120px;
+  text-align: center;         /* ✅ Center the link text */
+  box-sizing: border-box;
+}
+
+.container-hub .container a:hover, button:hover {
+  background-color: yellow;
+  color: black;
+}

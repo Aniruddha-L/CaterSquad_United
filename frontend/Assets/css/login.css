@@ -1,0 +1,81 @@
+/* Full page container */
+.container-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 88vh;
+  background-color: #121212; /* dark background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Input wrapper */
+.user,
+.passwd {
+  width: 320px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputs */
+.name,
+.passwd input {
+  padding: 14px;
+  font-size: 15px;
+  background-color: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: white;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.name::placeholder,
+.passwd input::placeholder {
+  color: #aaa;
+}
+
+.name:focus,
+.passwd input:focus {
+  border-color: #fdd835; /* yellow accent on focus */
+}
+
+/* Password field icon */
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-icon {
+  position: absolute;
+  right: 12px;
+  top: 35%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #fdd835; /* yellow eye icon */
+}
+
+/* Submit Button */
+button[type="submit"] {
+  width: 320px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #fdd835; /* yellow */
+  color: #121212; /* dark text */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #ffeb3b;
+}
+
+/* Optional: error/success message */
+.message {
+  color: white;
+  margin-bottom: 1rem;
+}

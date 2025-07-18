@@ -1,0 +1,57 @@
+Task Time Estimation API - Quick Start Guide
+
+1. Requirements
+---------------
+- Python 3.10 or newer
+- Install dependencies:
+  pip install flask pandas scikit-learn joblib
+
+2. Folder Structure
+-------------------
+task-time-estimation/
+│
+├── src/
+│   ├── app.py
+│   └── task_time_model.joblib
+├── tests/
+│   └── test_app.py
+├── ani.txt
+
+3. How to Run the API
+---------------------
+- Open a terminal and navigate to the src folder:
+  cd src
+
+- Start the Flask server:
+  python app.py
+
+- The API will run at http://127.0.0.1:5000/
+
+4. How to Use the API
+---------------------
+- GET /sample
+  Shows usage instructions.
+
+- POST /predict
+  Send a JSON payload with these fields:
+    {
+      "Machine ID": "EXC001",
+      "Operator ID": "OP1001",
+      "Engine Hours": 1500,
+      "Fuel Used (L)": 5.0,
+      "Load Cycles": 8,
+      "Idling Time (min)": 30,  
+      "Seatbelt Status": "Fastened",
+      "Safety Alert Triggered": "No"
+    }
+
+  Example using curl:
+    curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d "{\"Machine ID\": \"EXC001\", \"Operator ID\": \"OP1001\", \"Engine Hours\": 1500, \"Fuel Used (L)\": 5.0, \"Load Cycles\": 8, \"Idling Time (min)\": 30, \"Seatbelt Status\": \"Fastened\", \"Safety Alert Triggered\": \"No\"}"
+
+5. How to Run Tests
+-------------------
+- From the project root, run:
+  pytest tests
+
+-------------------
+If you have any issues, check that task_time_model.joblib is in the src folder and all dependencies are installed.

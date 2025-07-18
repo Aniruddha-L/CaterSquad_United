@@ -1,0 +1,14 @@
+.container-about{
+    display: block;
+    place-items: center;
+    margin-top: 15rem;
+    border-collapse: collapse;
+    border-spacing: 20px;
+}
+.container-about > thead>tr>th, tbody>tr>td{
+   border: 2px solid white;
+   text-align: center;
+   color: white;
+   /* padding: 10%; */
+   padding-right: 2%;
+}

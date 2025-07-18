@@ -1,0 +1,9 @@
+task_time_estimation/
+│
+├── app.py                  # Flask application
+├── model.py                # Model training and prediction logic
+├── requirements.txt        # Python dependencies
+├── data/                   # Directory for datasets
+│   └── tasks.csv           # Sample dataset
+├── templates/              # HTML templates (if needed)
+└── static/                 # Static files (if needed)
