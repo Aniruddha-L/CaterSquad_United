@@ -29,14 +29,14 @@ const ColorGrid = () => {
 
     setColorIndices(newColorIndices);
 
-    let delay = 5000; // Default delay
+    let delay = 1000; // Default delay
 
     if (newColorIndices.includes(colors.indexOf('red'))) {
-      // window.alert('In 4m proximity');
-      delay = 5000;
+      window.alert('In 4m proximity');
+      delay = 3000;
     } else if (newColorIndices.includes(colors.indexOf('yellow'))) {
       window.alert('In 6M proximity');
-      delay = 5000;
+      delay = 3000;
     }
 
     timeoutRef.current = setTimeout(updateColors, delay);

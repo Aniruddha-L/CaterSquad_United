@@ -97,7 +97,7 @@ function TaskTime() {
           </div>
         </div>
 
-        <button type="submit" className="task-submit-btn">Estimate Time</button>
+        <button type="submit" className="task-submit-btn" style={{backgroundColor: "#FFF"}}>Estimate Time</button>
       </form>
 
       {predict !== null && (
